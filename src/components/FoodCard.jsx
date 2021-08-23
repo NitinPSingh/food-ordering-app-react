@@ -27,7 +27,7 @@ export default function FoodCardContainer(props) {
         const orderExist = orderList.filter((f) => f._id === orderItem[0]._id);
         function findOrder(t) {
             for (index = 0; index < orderList.length; index++) 
-                if (t._id == orderList[index]._id) 
+                if (t._id === orderList[index]._id) 
                     break;
         return index
         }
@@ -77,7 +77,7 @@ export default function FoodCardContainer(props) {
         function findOrder(t) {
 
             for (index = 0; index < orderList.length; index++) 
-                if (t._id == orderList[index]._id) 
+                if (t._id === orderList[index]._id) 
                     break;
         return index
         }
@@ -95,7 +95,7 @@ export default function FoodCardContainer(props) {
         function findOrder(t) {
 
             for (index = 0; index < orderList.length; index++) 
-                if (t._id == orderList[index]._id) 
+                if (t._id === orderList[index]._id) 
                     break;
         return index
         }
@@ -112,7 +112,7 @@ export default function FoodCardContainer(props) {
         function findOrder(id) {
 
             for (index = 0; index < orderList.length; index++) 
-                if (id == orderList[index]._id) 
+                if (id === orderList[index]._id) 
                     break;
         return index
         }
@@ -120,6 +120,8 @@ export default function FoodCardContainer(props) {
         index = findOrder(id)
         let ordernew = orderList.splice(index, 1)
         setOrderList([...orderList]);
+        console.log(ordernew)
+        console.log(liked)
 
     }
 
@@ -128,12 +130,13 @@ export default function FoodCardContainer(props) {
         orderList.map((t) => totalprice = totalprice + t.price * t.qty)
         setTotal(totalprice.toFixed(2))
         props.getOrderList(orderList)
+        
 
     }, [orderList])
     return (
         <div className="sub-main">
             <div className="foodcard-container">
-
+        
                 {fooditems.map((fooditems) => {
                     return (<FoodCard fooditems={fooditems} onLike={handleLike}/>);
                 })}
@@ -177,7 +180,7 @@ export default function FoodCardContainer(props) {
                             alignSelf: "center",
                             justifySelf: "end",
                             fontSize: "bold"
-                        }}>{total}</h2>
+                        }}> ${total}</h2>
                     </div>
                     <NavLink to="/checkout" exact>
 
@@ -241,7 +244,7 @@ function FoodCard(props) {
                                 style={{
                                 maxWidth: "12px"
                             }}
-                                src="https://image.flaticon.com/icons/png/512/1828/1828884.png"/> {props.fooditems.rating}</div>
+                              alt=""  src="https://image.flaticon.com/icons/png/512/1828/1828884.png"/> {props.fooditems.rating}</div>
                         <div >
                             <i
                                 onClick={handleLike}
@@ -265,7 +268,8 @@ function FoodCard(props) {
                             maxWidth: "100px"
                         }}
                             id="foodimg"
-                            src="https://www.thespruceeats.com/thmb/V4dx5tBv7LQF1kdu3LFzOc-FWZQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/malaysian-potato-carrot-and-tomato-soup-3030415-hero-01-7d51917d0cd14e17a13495f4c9940100.jpg"></img>
+                            src="https://www.thespruceeats.com/thmb/V4dx5tBv7LQF1kdu3LFzOc-FWZQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/malaysian-potato-carrot-and-tomato-soup-3030415-hero-01-7d51917d0cd14e17a13495f4c9940100.jpg"
+                            alt="" ></img>
                     </div>
                     <div className="foodcard-bottom">
 
@@ -300,7 +304,7 @@ function OrderCard(props) {
    
   }
   function minQty(){
-    if(props.fooditems.qty==1){
+    if(props.fooditems.qty===1){
       props.delete(props.fooditems._id)
     }
     else{
@@ -317,7 +321,8 @@ function OrderCard(props) {
   
     
      <div className="ordercard" >
-        <div className="orderimg"><img style={{maxWidth:"50px",}} id="foodimg"  src="https://www.thespruceeats.com/thmb / V4dx5tBv7LQF1kdu3LFzOc - FWZQ = /960x0/filters : no_upscale(): max_bytes(150000): strip_icc(): format(webp) / malaysian - potato - carrot - and - tomato - soup - 3030415 - hero - 01 - 7 d51917d0cd14e17a13495f4c9940100.jpg " /> </div>
+        <div className="orderimg"><img style={{maxWidth:"50px",}} id="foodimg"  src="https://www.thespruceeats.com/thmb/V4dx5tBv7LQF1kdu3LFzOc-FWZQ=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/malaysian-potato-carrot-and-tomato-soup-3030415-hero-01-7d51917d0cd14e17a13495f4c9940100.jpg"
+                            alt=""/> </div>
  <div> <div style={{
             fontWeight: "bold"
         }}>{props.fooditems.name}</div> < div > <span id="ordercard-weight">{props.fooditems.weight}g</span> </div> </div> <div
