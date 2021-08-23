@@ -66,6 +66,7 @@ export default function FoodCardContainer(props) {
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
+
     }), [addFoodToOrderList]);
 
     function plusQty(t) {
@@ -132,11 +133,12 @@ export default function FoodCardContainer(props) {
         props.getOrderList(orderList)
         
 
-    }, [orderList])
+    }, [orderList,props])
     return (
         <div className="sub-main">
+        {console.log(isOver)}
             <div className="foodcard-container">
-        
+
                 {fooditems.map((fooditems) => {
                     return (<FoodCard fooditems={fooditems} onLike={handleLike}/>);
                 })}
@@ -237,7 +239,7 @@ function FoodCard(props) {
             }}>
 
                 <div className="foodcard" id="foodcard">
-
+                {console.log(isDragging)}
                     <div className="foodcard-top">
                         <div id="rating">
                             <img
