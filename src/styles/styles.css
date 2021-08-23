@@ -1,0 +1,252 @@
+body{
+    /* padding-left: 100px; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.foodcard-container{
+    display: grid;
+    padding: 35px 23px;
+    
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+    grid-gap: 10px;
+}
+.main-foodcard{
+    min-width: 170px;
+    max-height: 130px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.foodcard{
+    max-width: 170px;
+    max-height: 130px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+.foodcard-top{
+    display: grid;
+    grid-template-columns: 1fr 20px;
+}
+#rating{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 2px;
+    max-width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size:12px;
+}
+.foodcard-middle{
+    display: grid;
+    justify-self: center;
+}
+#foodcard-weight{
+    margin-left: 5px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    font-size: 10px;
+}
+#ordercard-weight{
+    margin-left: 5px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    border-radius: 25px;
+    color: gray;
+    font-size: 10px;
+    font-weight: bold;
+   
+}
+#foodimg{
+    border-radius: 50%;
+    justify-self: center;
+    /* border: 2px solid black; */
+}
+.box {
+    max-height: 200px;
+    min-height: 200px;
+    
+    
+    border: 2px solid black;
+    overflow-y:auto;
+  }
+  
+.main{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    max-width: 1200px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 25px;
+   
+  } 
+
+  .sub-main{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+   
+
+  }
+
+  .ordercard{
+      display: grid;
+      grid-template-columns: 60px 1fr 50px 53px 20px;
+      max-height: 55px;
+      margin-bottom: 15px;
+  }
+  #buttonplus{
+    border: 1px solid green;
+      min-width: 15px;
+      background-color: transparent;
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+      border-bottom-left-radius: 50%;
+      border-top-left-radius: 50%;
+      font-size: smaller;
+  }
+  #buttonminus{
+      border: 1px solid green;
+    min-width: 15px;
+    background-color: transparent;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    font-size: smaller;
+}
+#qty{
+    margin: 3px;
+    font-size: smaller;
+}
+.orderimg{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+}
+.dragdrop{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    border: 5px dashed greenyellow;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.totalpriceblock{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.totalpriceblock h2{
+    padding: 0px;
+    margin: 0px;
+}
+#cross{
+    border: 0px;
+    background-color: transparent;
+    color: red;
+    
+}
+.menu{
+       border-top-left-radius: 20px;
+    border-bottom-left-radius: 25px;
+   
+    background-color: limegreen;
+    color: black;
+}
+@media only screen and (max-width: 600px) {
+    .main{
+        grid-template-columns: 1fr;
+  
+  
+      width: 100%;
+    }
+  
+   .sub-main{
+    grid-template-columns: 1fr;
+
+
+  width: 100%;
+}
+  
+    body {
+  
+      display: block;
+  
+  
+    }
+    .menu{
+        border-radius: 0px;
+    }
+    .foodcard-container{
+        display: grid;
+        
+        
+        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+       
+        grid-gap: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) and (min-width: 600px) {
+    .main{
+        grid-template-columns: 1fr;
+  
+  
+      width: 100%;
+    }
+    .menu{
+        border-radius: 0px;
+    }
+   .sub-main{
+    grid-template-columns: 1fr;
+
+
+  width: 100%;
+}
+  
+    body {
+  
+      display: block;
+  
+  
+    }
+  }
+  @media only screen and (max-width: 1200px) and (min-width: 800px) {
+    .main{
+        grid-template-columns: 1fr;
+  
+  
+      width: 100%;
+    }
+    .menu{
+        border-radius: 0px;
+    }
+    .sub-main{
+        grid-template-columns: 1fr;
+    
+    
+      width: 100%;
+    }
+    body {
+  
+      display: block;
+  
+  
+    }
+  }
