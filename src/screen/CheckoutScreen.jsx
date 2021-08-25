@@ -16,7 +16,7 @@ function CheckoutScreen(props) {
         {props.finalOrder.map((t) => (
 
        
-            <CheckoutScreenCard items={t} />
+            <CheckoutScreenCard key={t._id} items={t} />
             
         )
 

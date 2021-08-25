@@ -1,5 +1,5 @@
 import React from 'react'
-import  FoodCardContainer  from '../components/FoodCard'
+import  FoodCardContainer  from '../components/FoodCardContainer'
 
 import '../styles/styles.css';
 
