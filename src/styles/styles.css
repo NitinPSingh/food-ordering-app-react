@@ -236,6 +236,7 @@ body{
     }
     .menu{
         border-radius: 0px;
+        
     }
     .sub-main{
         grid-template-columns: 1fr;
@@ -250,3 +251,29 @@ body{
   
     }
   }
+  @media only screen and (min-width: 1200px){
+    
+    .menu{
+       
+        min-height: 550px;
+    }
+    
+    .checkcont{
+      min-width: 800px;
+      grid-gap: 10px;
+      min-height: 350px;
+      max-height: 350px;
+      overflow-y:auto;
+      min-width: 936px;
+
+    }
+  }
+.CSCard{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+}
+.cccontainer{
+ display: grid;
+ grid-gap: 10px;
+}
